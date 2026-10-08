@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mortgage & Property Calculator | Aurelia Vance</title>
+    <meta
+      name="description"
+      content="Estimate the true monthly cost of any US property: studio, condo, townhouse, single-family, penthouse or multi-family. Payment, taxes, HOA, PMI, affordability and payoff."
+    />
+    <link rel="canonical" href="https://www.example.com/calculator.html" />
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="calculator.css" />
+    <link rel="stylesheet" href="brand.css" />
+  </head>
+  <body>
+    <header class="top" id="top">
+      <a
+        class="logo"
+        href="index.html"
+        aria-label="Aurelia Vance Property Advisor, home"
+        ><span class="brand b-maroon" role="img"></span
+        ><span class="brand b-cream" role="img"></span
+      ></a>
+      <nav aria-label="Primary">
+        <a href="index.html#search">Homes</a
+        ><a href="index.html#areas">Neighborhoods</a
+        ><a href="calculator.html" aria-current="page">Calculator</a
+        ><a href="index.html#agent">About</a
+        ><a href="index.html#contact">Contact</a>
+      </nav>
+      <a class="btn gold cta" href="index.html#contact">Book a consult</a
+      ><button
+        class="menu"
+        type="button"
+        aria-label="Menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span>
+      </button>
+    </header>
+    <main>
+      <section class="intro">
+        <h1>Property calculator</h1>
+        <p>
+          Choose a property type, set your numbers, and see the real monthly
+          cost: loan, tax, insurance, HOA, mortgage insurance and upkeep.
+        </p>
+        <div class="tabs" role="tablist" aria-label="Calculator mode">
+          <button type="button" role="tab" data-mode="pay" aria-selected="true">
+            Monthly payment
+          </button>
+          <button
+            type="button"
+            role="tab"
+            data-mode="afford"
+            aria-selected="false"
+          >
+            How much can I afford
+          </button>
+        </div>
+      </section>
+
+      <section class="layout">
+        <form class="inputs" id="f" onsubmit="return false;" autocomplete="off">
+          <fieldset>
+            <legend>Property</legend>
+            <div
+              class="types"
+              id="types"
+              role="group"
+              aria-label="Property type"
+            ></div>
+            <div class="g2">
+              <label>State<select id="state"></select></label>
+              <label
+                >Property tax, % per year<input
+                  type="number"
+                  step="0.01"
+                  min="0"
+                  data-k="taxRate"
+              /></label>
+            </div>
+            <div data-show="pay">
+              <label
+                >Purchase price<input
+                  type="number"
+                  step="10000"
+                  min="50000"
+                  data-k="price"
+              /></label>
+              <input
+                class="range"
+                type="range"
+                min="100000"
+                max="30000000"
+                step="25000"
+                data-k="price"
+                aria-label="Purchase price slider"
+              />
+              <div class="down">
+                <label
+                  >Down payment<input
+                    type="number"
+                    step="any"
+                    min="0"
+                    id="downNum"
+                /></label>
+                <div class="seg" data-seg="downUnit">
+                  <button type="button" data-v="pct">%</button
+                  ><button type="button" data-v="usd">$</button>
+                </div>
+              </div>
+              <input
+                class="range"
+                type="range"
+                min="0"
+                max="80"
+                step="0.5"
+                id="downR"
+                aria-label="Down payment percent slider"
+              />
+              <p class="hint" id="downHint"></p>
+            </div>
+            <div data-show="afford" hidden>
+              <div class="g2">
+                <label
+                  >Household income, per year<input
+                    type="number"
+                    step="1000"
+                    min="0"
+                    data-k="income"
+                /></label>
+                <label
+                  >Monthly debts (car, cards, loans)<input
+                    type="number"
+                    step="50"
+                    min="0"
+                    data-k="debts"
+                /></label>
+                <label
+                  >Cash for down payment<input
+                    type="number"
+                    step="5000"
+                    min="0"
+                    data-k="dp"
+                /></label>
+                <label
+                  >Debt-to-income limit<select data-k="dti">
+                    <option value="36">36% (conservative)</option>
+                    <option value="43" selected>43% (standard)</option>
+                    <option value="50">50% (stretch)</option>
+                  </select></label
+                >
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Loan</legend>
+            <div class="seg wide" data-seg="loan">
+              <button type="button" data-v="conv">Conventional</button
+              ><button type="button" data-v="fha">FHA</button
+              ><button type="button" data-v="va">VA</button
+              ><button type="button" data-v="jumbo">Jumbo</button>
+            </div>
+            <div class="g2">
+              <label
+                >Credit score<select data-k="credit">
+                  <option value="great">760 and above</option>
+                  <option value="good" selected>700 to 759</option>
+                  <option value="fair">640 to 699</option>
+                </select></label
+              >
+              <label
+                >Term
+                <div class="seg" data-seg="term">
+                  <button type="button" data-v="10">10</button
+                  ><button type="button" data-v="15">15</button
+                  ><button type="button" data-v="20">20</button
+                  ><button type="button" data-v="30">30</button>
+                </div></label
+              >
+            </div>
+            <label
+              >Interest rate, % per year<input
+                type="number"
+                step="0.125"
+                min="0"
+                max="20"
+                data-k="rate"
+            /></label>
+            <input
+              class="range"
+              type="range"
+              min="2"
+              max="12"
+              step="0.125"
+              data-k="rate"
+              aria-label="Interest rate slider"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Monthly costs and extras</legend>
+            <div class="g2">
+              <label
+                >HOA dues, $ per month<input
+                  type="number"
+                  step="10"
+                  min="0"
+                  data-k="hoa"
+              /></label>
+              <label
+                >Insurance, % of price per year<input
+                  type="number"
+                  step="0.01"
+                  min="0"
+                  data-k="insRate"
+              /></label>
+              <label
+                >Upkeep, % of price per year<input
+                  type="number"
+                  step="0.1"
+                  min="0"
+                  data-k="maint"
+              /></label>
+              <label
+                >Closing costs, % of price<input
+                  type="number"
+                  step="0.1"
+                  min="0"
+                  data-k="close"
+              /></label>
+              <label
+                >Rental income, $ per month<input
+                  type="number"
+                  step="50"
+                  min="0"
+                  data-k="rent"
+              /></label>
+              <label
+                >Extra payment, $ per month<input
+                  type="number"
+                  step="50"
+                  min="0"
+                  data-k="extra"
+              /></label>
+            </div>
+          </fieldset>
+        </form>
+
+        <aside class="sum" id="sum" aria-live="polite">
+          <p class="sum-t" id="rTitle"></p>
+          <p class="sum-big" id="rBig"></p>
+          <p class="sum-s" id="rSub"></p>
+          <div class="donut-w">
+            <svg
+              id="donut"
+              viewBox="0 0 42 42"
+              role="img"
+              aria-label="Monthly cost breakdown"
+            ></svg>
+            <div class="donut-c" id="donutC"></div>
+          </div>
+          <ul class="legend" id="legend"></ul>
+          <p class="warn" id="warn" role="alert"></p>
+          <button class="btn" type="button" id="useBtn" hidden>
+            Use this price in the payment calculator
+          </button>
+        </aside>
+      </section>
+
+      <section class="out" id="out">
+        <h2>Your numbers</h2>
+        <div class="stats" id="stats"></div>
+        <h3>Principal and interest by year</h3>
+        <div class="chart-w">
+          <svg
+            id="chart"
+            viewBox="0 0 640 240"
+            role="img"
+            aria-label="Yearly principal and interest chart"
+          ></svg>
+        </div>
+        <p class="key">
+          <span class="k1"></span>Principal <span class="k2"></span>Interest
+          <span class="k3"></span>Remaining balance
+        </p>
+        <details class="sched">
+          <summary>Year-by-year schedule</summary>
+          <div class="scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Principal</th>
+                  <th>Interest</th>
+                  <th>Balance</th>
+                </tr>
+              </thead>
+              <tbody id="sched"></tbody>
+            </table>
+          </div>
+        </details>
+        <div class="actions">
+          <a class="btn gold" id="wa" href="#" rel="noopener"
+            >Send this estimate on WhatsApp</a
+          >
+          <button class="btn line" type="button" id="csv">
+            Download schedule (CSV)
+          </button>
+          <button class="btn line" type="button" onclick="print()">
+            Print
+          </button>
+        </div>
+        <p class="fine">
+          Estimates only, not a loan offer. Tax, insurance and mortgage
+          insurance vary by property, lender and credit profile. Speak with a
+          licensed lender before deciding.
+        </p>
+      </section>
+    </main>
+    <a class="bar" href="#sum" id="bar"
+      ><span id="barL"></span><b id="barV"></b
+    ></a>
+    <script src="calculator.js"></script>
+  </body>
+</html>

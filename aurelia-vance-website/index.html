@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Aurelia Vance | Luxury Real Estate in Beverly Hills, Bel Air & Malibu
+    </title>
+    <meta
+      name="description"
+      content="Private luxury real estate in Beverly Hills, Bel Air and Malibu. Search homes, estimate payments and book a private consultation with Aurelia Vance."
+    />
+    <link rel="canonical" href="https://www.example.com/" />
+    <meta property="og:title" content="Aurelia Vance | Luxury Real Estate" />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&h=630&q=75"
+    />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="brand.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "Aurelia Vance",
+        "telephone": "+13105550142",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "9500 Wilshire Blvd",
+          "addressLocality": "Beverly Hills",
+          "addressRegion": "CA",
+          "postalCode": "90212",
+          "addressCountry": "US"
+        },
+        "areaServed": ["Beverly Hills", "Bel Air", "Malibu"]
+      }
+    </script>
+  </head>
+  <body data-page="home">
+    <div class="pre" aria-hidden="true">
+      <span class="brand b-cream pre-logo"></span><i></i>
+    </div>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="nav" id="nav">
+      <a
+        class="logo"
+        href="index.html"
+        aria-label="Aurelia Vance Property Advisor, home"
+        ><span class="brand b-maroon" role="img"></span
+        ><span class="brand b-cream" role="img"></span
+      ></a>
+      <nav aria-label="Primary">
+        <a href="index.html#search">Homes</a
+        ><a href="index.html#areas">Neighborhoods</a
+        ><a href="calculator.html">Calculator</a
+        ><a href="index.html#agent">About</a
+        ><a href="index.html#contact">Contact</a>
+      </nav>
+      <a class="btn gold" href="#contact">Book a consult</a>
+      <button
+        class="menu"
+        type="button"
+        aria-label="Menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span>
+      </button>
+    </header>
+    <main id="main">
+      <section class="h-hero" aria-label="Introduction">
+        <div class="h-media">
+          <video
+            class="h-video"
+            muted
+            loop
+            playsinline
+            autoplay
+            preload="auto"
+            poster="video/hero-poster.jpg"
+            aria-hidden="true"
+            tabindex="-1"
+          ></video>
+        </div>
+        <div class="h-stage">
+          <p class="h-note" role="status" hidden></p>
+          <button
+            class="h-pause"
+            type="button"
+            aria-label="Pause background video"
+          ></button>
+          <div class="h-in">
+            <h1>
+              <span>Where Los Angeles</span><span>keeps its finest</span
+              ><span>addresses.</span>
+            </h1>
+            <p>
+              Private representation across Beverly Hills, Bel Air and Malibu.
+              Most of our homes are sold before they are listed.
+            </p>
+          </div>
+          <form class="h-bar" id="quick" aria-label="Quick search">
+            <label
+              >Area<select name="area">
+                <option value="">All areas</option>
+                <option>Beverly Hills</option>
+                <option>Bel Air</option>
+                <option>Malibu</option>
+              </select></label
+            >
+            <label
+              >Budget<select name="price">
+                <option value="">Any</option>
+                <option value="5">Up to $5M</option>
+                <option value="10">Up to $10M</option>
+                <option value="20">Up to $20M</option>
+              </select></label
+            >
+            <button type="submit">Search homes</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="stmt">
+        <p class="scrub">
+          Most of our sales never reach the public market. We find the home
+          first, introduce you quietly, and close before anyone else knows it
+          existed.
+        </p>
+      </section>
+
+      <div class="xp-track">
+        <section class="xp" aria-label="Track record">
+          <div class="xp-img">
+            <img
+              loading="lazy"
+              width="2000"
+              height="1250"
+              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&h=1250&q=80"
+              srcset="
+                https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&h=1200&q=75   900w,
+                https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&h=1250&q=80 2000w
+              "
+              sizes="100vw"
+              alt="Estate with formal gardens in Bel Air"
+            />
+          </div>
+          <div class="xp-stats">
+            <div>
+              <b data-n="1.4" data-pre="$" data-suf="B" data-d="1">$1.4B</b>in
+              closed sales
+            </div>
+            <div><b data-n="18" data-d="0">18</b>years in Los Angeles</div>
+            <div>
+              <b data-n="62" data-suf="%" data-d="0">62%</b>sold off-market
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="alt" id="search">
+        <div class="wrap">
+          <div class="col-head">
+            <div>
+              <h2>The collection</h2>
+              <p class="count" id="count" aria-live="polite"></p>
+            </div>
+            <label class="sort"
+              >Sort by<select id="sort">
+                <option value="featured">Featured</option>
+                <option value="low">Price, low to high</option>
+                <option value="high">Price, high to low</option>
+                <option value="beds">Most bedrooms</option>
+              </select></label
+            >
+          </div>
+          <div class="chips" id="chips" role="group" aria-label="Filters"></div>
+          <div class="col-grid" id="ix"></div>
+        </div>
+      </section>
+
+      <section class="nb" id="areas">
+        <div class="nb-intro">
+          <h2>Three neighborhoods. Three ways to live.</h2>
+          <p>Scroll through the three addresses we know best.</p>
+        </div>
+        <div class="nb-wrap">
+          <div class="nb-stage" aria-hidden="true">
+            <div class="nb-imgs" id="nb-stage-imgs"></div>
+            <div class="nb-count"><b id="nb-n">01</b><span>/ 03</span></div>
+            <div class="nb-bar"><i id="nb-bar"></i></div>
+            <div class="nb-cap" id="nb-cap"></div>
+          </div>
+          <div class="nb-chapters" id="nb-chapters"></div>
+        </div>
+      </section>
+
+      <section class="stack" aria-label="How it works">
+        <div class="wrap">
+          <h2>How a purchase unfolds</h2>
+          <article class="st" style="--i: 0">
+            <div class="st-t">
+              <b>01</b>
+              <h3>We listen first</h3>
+              <p>
+                One conversation about how you live, not a form. Aurelia builds
+                a private brief and starts calling owners.
+              </p>
+            </div>
+            <img
+              loading="lazy"
+              width="900"
+              height="700"
+              src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&h=700&q=75"
+              alt="Quiet sitting room with natural light"
+            />
+          </article>
+          <article class="st" style="--i: 1">
+            <div class="st-t">
+              <b>02</b>
+              <h3>Homes you won't find online</h3>
+              <p>
+                Off-market introductions and early access to listings before
+                they reach the MLS.
+              </p>
+            </div>
+            <img
+              loading="lazy"
+              width="900"
+              height="700"
+              src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=900&h=700&q=75"
+              alt="Light-filled living room"
+            />
+          </article>
+          <article class="st" style="--i: 2">
+            <div class="st-t">
+              <b>03</b>
+              <h3>Private showings</h3>
+              <p>
+                Scheduled around you, with comparable sales and an honest read
+                on every house.
+              </p>
+            </div>
+            <img
+              loading="lazy"
+              width="900"
+              height="700"
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&h=700&q=75"
+              alt="Modern home exterior"
+            />
+          </article>
+          <article class="st" style="--i: 3">
+            <div class="st-t">
+              <b>04</b>
+              <h3>Negotiate and close</h3>
+              <p>
+                Terms, inspections and escrow handled end to end, with
+                discretion at every step.
+              </p>
+            </div>
+            <img
+              loading="lazy"
+              width="900"
+              height="700"
+              src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&h=700&q=75"
+              alt="Coastal home at golden hour"
+            />
+          </article>
+        </div>
+      </section>
+
+      <section class="alt" id="afford">
+        <div class="wrap two">
+          <div>
+            <h2>What will it cost each month?</h2>
+            <p>
+              Principal, interest, property tax and insurance on a 30-year fixed
+              loan. Rates are illustrative.
+            </p>
+            <a
+              class="btn gold"
+              style="margin-top: 1.6rem"
+              href="calculator.html"
+              >Open the advanced calculator</a
+            >
+          </div>
+          <div class="form" id="calc-mount"></div>
+        </div>
+      </section>
+
+      <div class="mq" aria-hidden="true">
+        <div class="mq-t">
+          <span
+            >Beverly Hills · Bel Air · Malibu · Private Sales · Off-Market
+            Access · </span
+          ><span
+            >Beverly Hills · Bel Air · Malibu · Private Sales · Off-Market
+            Access ·
+          </span>
+        </div>
+      </div>
+
+      <section id="agent">
+        <div class="wrap ag">
+          <img
+            class="portrait rv-clip"
+            loading="lazy"
+            width="800"
+            height="800"
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&h=800&q=75"
+            alt="Portrait of Aurelia Vance"
+          />
+          <div>
+            <h2>Aurelia Vance</h2>
+            <p>
+              Eighteen years in Los Angeles luxury real estate. She takes on a
+              small number of clients at a time, so you get her phone, not an
+              assistant's.
+            </p>
+            <p style="margin-top: 1rem">
+              Former architectural historian. She reads a house the way a
+              surveyor and a buyer both would, and tells you what she sees.
+            </p>
+            <div class="row">
+              <a class="btn" href="tel:+13105550142">Call</a
+              ><a class="btn line" href="sms:+13105550142">Text</a
+              ><a
+                class="btn line"
+                href="https://wa.me/13105550142"
+                rel="noopener"
+                >WhatsApp</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="alt" id="contact">
+        <div class="wrap">
+          <h2 class="huge rv">Let's find yours.</h2>
+          <div class="two">
+            <div id="lead-mount"></div>
+            <iframe
+              title="Office location"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=9500+Wilshire+Blvd+Beverly+Hills+CA&output=embed"
+              style="height: 100%; min-height: 340px; margin: 0"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="ftr"></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+    <script src="home.js"></script>
+  </body>
+</html>

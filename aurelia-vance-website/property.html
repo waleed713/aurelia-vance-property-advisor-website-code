@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Luxury Home | Aurelia Vance</title>
+    <meta
+      name="description"
+      content="Luxury home details, photos, mortgage estimate and private showing request."
+    />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="brand.css" />
+  </head>
+  <body data-page="property">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="nav" id="nav">
+      <a
+        class="logo"
+        href="index.html"
+        aria-label="Aurelia Vance Property Advisor, home"
+        ><span class="brand b-maroon" role="img"></span
+        ><span class="brand b-cream" role="img"></span
+      ></a>
+      <nav aria-label="Primary">
+        <a href="index.html#search">Homes</a
+        ><a href="index.html#areas">Neighborhoods</a
+        ><a href="calculator.html">Calculator</a
+        ><a href="index.html#agent">About</a
+        ><a href="index.html#contact">Contact</a>
+      </nav>
+      <a class="btn gold" href="#contact">Book a consult</a>
+      <button
+        class="menu"
+        type="button"
+        aria-label="Menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span>
+      </button>
+    </header>
+    <main id="main">
+      <div class="wrap pagehead">
+        <p class="crumb" id="crumb"></p>
+        <div class="gallery" id="gallery"></div>
+        <div class="detail">
+          <div>
+            <div id="info"></div>
+            <h2 style="margin-top: 3rem">Estimate the payment</h2>
+            <div class="form" id="calc-mount"></div>
+            <h2 style="margin-top: 3rem">Location</h2>
+            <div id="map-mount"></div>
+          </div>
+          <aside class="side" id="contact"><div id="lead-mount"></div></aside>
+        </div>
+      </div>
+    </main>
+    <footer id="ftr"></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
